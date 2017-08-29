@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hemmerling.aufgabe05bc_benchmarking.model;
+package com.hemmerling.aufgabe05bc_13a_benchmarking.model;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -21,7 +21,7 @@ public class BenchmarkManager {
 
     private static BenchmarkManager instance = null;
 
-    protected BenchmarkManager() {
+    public BenchmarkManager() {
         // Exists only to defeat instantiation.
     }
 

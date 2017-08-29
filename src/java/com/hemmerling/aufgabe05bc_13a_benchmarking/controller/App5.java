@@ -3,16 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hemmerling.aufgabe05bc_benchmarking.controller;
+package com.hemmerling.aufgabe05bc_13a_benchmarking.controller;
 
-import com.hemmerling.aufgabe05bc_benchmarking.model.BenchmarkManager;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import static java.lang.Thread.sleep;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author rhemmerling
  */
-@WebServlet(name = "BenchmarkResult", urlPatterns = {"/BenchmarkResult"})
-public class BenchmarkResult extends HttpServlet {
+@WebServlet(name = "App5", urlPatterns = {"/App5"})
+public class App5 extends HttpServlet {
 
-     /**
+    /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -38,12 +33,13 @@ public class BenchmarkResult extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        ServletContext context2 = request.getServletContext();      
-        BenchmarkManager benchmarkResult = ( BenchmarkManager ) context2.getAttribute("BENCHMARK");
-        
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("benchmark.jsp");
-        requestDispatcher.forward(request, response); 
+        try {
+            sleep(2000L);
+        } catch (InterruptedException ex) {
+            System.out.println(App5.class.getName() + " => " + request + ": interrupted");
+        }
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
+        requestDispatcher.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

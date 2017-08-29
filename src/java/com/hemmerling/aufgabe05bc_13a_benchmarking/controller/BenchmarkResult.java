@@ -3,11 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hemmerling.aufgabe05bc_benchmarking.controller;
+package com.hemmerling.aufgabe05bc_13a_benchmarking.controller;
 
+import com.hemmerling.aufgabe05bc_13a_benchmarking.model.BenchmarkManager;
 import java.io.IOException;
-import static java.lang.Thread.sleep;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +23,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author rhemmerling
  */
-@WebServlet(name = "App4", urlPatterns = {"/App4"})
-public class App4 extends HttpServlet {
+@WebServlet(name = "BenchmarkResult", urlPatterns = {"/BenchmarkResult"})
+public class BenchmarkResult extends HttpServlet {
 
-    /**
+     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
@@ -33,13 +38,12 @@ public class App4 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try {
-            sleep(5000L);
-        } catch (InterruptedException ex) {
-            System.out.println(App4.class.getName() + " => " + request + ": interrupted");
-        }
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-        requestDispatcher.forward(request, response);
+
+        ServletContext context2 = request.getServletContext();      
+        BenchmarkManager benchmarkResult = ( BenchmarkManager ) context2.getAttribute("BENCHMARK");
+        
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("benchmark.jsp");
+        requestDispatcher.forward(request, response); 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.hemmerling.aufgabe05bc_benchmarking.controller;
+package com.hemmerling.aufgabe05bc_13a_benchmarking.controller;
 
 import java.io.IOException;
 import static java.lang.Thread.sleep;
@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author rhemmerling
  */
-@WebServlet(name = "App5", urlPatterns = {"/App5"})
-public class App5 extends HttpServlet {
+@WebServlet(name = "App4", urlPatterns = {"/App4"})
+public class App4 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,9 +34,9 @@ public class App5 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-            sleep(2000L);
+            sleep(5000L);
         } catch (InterruptedException ex) {
-            System.out.println(App5.class.getName() + " => " + request + ": interrupted");
+            System.out.println(App4.class.getName() + " => " + request + ": interrupted");
         }
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
         requestDispatcher.forward(request, response);
