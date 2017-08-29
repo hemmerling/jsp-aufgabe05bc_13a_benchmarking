@@ -22,10 +22,7 @@ import javax.servlet.annotation.WebFilter;
  *
  * @author rhemmerling
  */
-@WebFilter(filterName = "BenchmarkerFilter_Annotation_JSP", 
-           // servletNames = { "/" },
-           urlPatterns = { "*.jsp", "/" })
-public class BenchmarkerFilter implements Filter {
+public class BenchmarkerFilter5 implements Filter {
 
     private FilterConfig filterConfig;
 
@@ -46,7 +43,7 @@ public class BenchmarkerFilter implements Filter {
         ServletContext context2 = request.getServletContext();
         BenchmarkManager benchmarkResult = (BenchmarkManager) context2.getAttribute("BENCHMARK_FILTER");
 
-        System.out.println("**************** BenchmarkerFilter-VORHER ****************");
+        System.out.println("**************** BenchmarkerFilter5-VORHER ****************");
         System.out.println(request + ": initialized");
         startTime = System.currentTimeMillis();
         // startTime = System.nanoTime();
@@ -58,7 +55,7 @@ public class BenchmarkerFilter implements Filter {
         System.out.format("Execution time for the URL: '%s' ist: %d ms%n",
                 requestURI, duration);
         System.out.println(request + ": destroyed");
-        System.out.println("**************** BenchmarkerFilter-NACHHER ****************");
+        System.out.println("**************** BenchmarkerFilter5-NACHHER ****************");
     }
 
     @Override

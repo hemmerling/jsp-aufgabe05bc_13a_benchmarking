@@ -7,8 +7,8 @@
     
     <!-- ################################################################################## -->
     <filter>
-        <filter-name>BenchmarkerFilter_Annotation_App5</filter-name>
-        <filter-class>com.hemmerling.aufgabe05bc_13a_benchmarking.filter.BenchmarkerFilter</filter-class>
+        <filter-name>BenchmarkerFilter_Annotation_App4</filter-name>
+        <filter-class>com.hemmerling.aufgabe05bc_13a_benchmarking.filter.BenchmarkerFilter4</filter-class>
         <async-supported>false</async-supported>
         <init-param>
           <param-name>ParmeterName</param-name>
@@ -16,7 +16,7 @@
         </init-param>
     </filter>
     <filter-mapping>
-        <filter-name>BenchmarkerFilter_Annotation_App5</filter-name>
+        <filter-name>BenchmarkerFilter_Annotation_App4</filter-name>
         <url-pattern>/App4</url-pattern>
         <!--<servlet-name>MS</servlet-name>-->
         <dispatcher>REQUEST</dispatcher>
@@ -25,6 +25,25 @@
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>ASYNC</dispatcher>-->
     </filter-mapping>
+    <filter>
+        <filter-name>BenchmarkerFilter_Annotation_App5</filter-name>
+        <filter-class>com.hemmerling.aufgabe05bc_13a_benchmarking.filter.BenchmarkerFilter5</filter-class>
+        <async-supported>false</async-supported>
+        <init-param>
+          <param-name>ParmeterName</param-name>
+          <param-value>ParameterValue</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>BenchmarkerFilter_Annotation_App5</filter-name>
+        <url-pattern>/App5</url-pattern>
+        <!--<servlet-name>MS</servlet-name>-->
+        <dispatcher>REQUEST</dispatcher>
+<!--        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>ASYNC</dispatcher>-->
+    </filter-mapping> 
     <!-- ################################################################################## -->
     <session-config>
         <session-timeout>
